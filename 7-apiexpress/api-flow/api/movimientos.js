@@ -11,7 +11,7 @@ module.exports = (app, rutaMovimientos) => {
         .get((req, res) => {
             // lectura de todos los movimientos
             let promesa = mongodb.finding(colName, { usuario: req.usuario });
-            promesa.
+            promesa
                 .then(result => result.length > 0 ? res.json(result) : res.status(204).send())
                 .catch(err => resError(err, res));
         })
